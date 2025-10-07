@@ -4,11 +4,9 @@ pipeline {
         maven 'MAVEN_HOME'
     }
     stages {
-        stage('Git clone & Clean') {
+        stage('Clean') {
             steps {
-                // Remove old folder if exists (optional)
-                // bat 'rmdir /s /q SE-Week4.Projects || echo Folder does not exist'
-                bat 'git clone https://github.com/vd-007-b/SE-Week4.Projects.git'
+                // Just clean the project, no manual git clone needed
                 bat 'mvn clean -f SE-Week4.Projects/pom.xml'
             }
         }
