@@ -7,7 +7,7 @@ pipeline {
         stage('Git clone & Clean') {
             steps {
                 // Remove old folder if exists (optional)
-                bat 'rmdir /s /q SE-Week4.Projects || echo Folder does not exist'
+                // bat 'rmdir /s /q SE-Week4.Projects || echo Folder does not exist'
                 bat 'git clone https://github.com/vd-007-b/SE-Week4.Projects.git'
                 bat 'mvn clean -f SE-Week4.Projects/pom.xml'
             }
